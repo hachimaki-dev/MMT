@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semana Ingeniosas 2026 // Taller Auto Solar Fotovoltaico</title>
+  <meta name="description" content="Presentación interactiva limpia y minimalista, fondo blanco, tipografía negra de alto contraste y acentos pasteles para el taller de auto solar de Semana Ingeniosas 2026.">
+  <link rel="stylesheet" href="css/cyber-racing.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       TOP MINIMAL HEADER (White & Clean)
+       ======================================================================== -->
+  <header class="hud-header" id="hudHeader">
+    <div class="brand-pill">
+      <span>SEMANA INGENIOSAS 2026</span>
+      <span class="brand-tag">DUOC UC</span>
+    </div>
+
+    <div class="hud-progress-group">
+      <div class="slide-number-display" id="lapCounter">01 <span>/ 23</span></div>
+      <div class="progress-track" title="Progreso de la presentación">
+        <div class="progress-bar-fill" id="boostFill"></div>
+      </div>
+    </div>
+
+    <div class="hud-actions">
+      <button class="hud-btn" id="btnGridToggle" title="Ver índice de diapositivas (Tecla G)">
+        <span>▦</span> Índice
+      </button>
+      <button class="hud-btn" id="btnFullscreen" title="Pantalla completa (Tecla F)">
+        <span>⛶</span> Fullscreen
+      </button>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       SLIDES DECK - FOCUSED, LOW TEXT, HIGH VISUAL IMPACT (23 SLIDES)
+       ======================================================================== -->
+  <main class="deck-container" id="deckContainer">
+
+    <!-- SLIDE 01: PORTADA -->
+    <section class="slide active" id="slide-1" data-index="0">
+      <div class="slide-card">
+        <div class="card-ribbon">
+          <span class="ribbon-tag">TALLER PRÁCTICO STEM</span>
+          <span class="ribbon-step">8° BÁSICO A 4° MEDIO</span>
+        </div>
+        <div class="card-content-split" style="text-align: center; flex-direction: column; justify-content: center; gap: 2.2rem;">
+          <h1 class="title-large" style="font-size: clamp(3rem, 5.8vw, 4.8rem);">
+            MINI AUTO SOLAR<br>
+            <span class="highlight-pastel-blue">FOTOVOLTAICO</span>
+          </h1>
+          <p class="phrase-lead" style="max-width: 820px; margin: 0 auto;">
+            ¿Un simple juguete escolar... o la tecnología que está transformando el planeta?
+          </p>
+          <div>
+            <button class="reveal-btn-simple" id="heroStartBtn" style="padding: 1rem 2.4rem; font-size: 1.2rem;">
+              Comenzar Charla <span>→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 02: EL ENIGMA / LA BOLSA -->
+    <section class="slide" id="slide-2" data-index="1">
+      <div class="slide-card">
+        <div class="card-ribbon">
+          <span class="ribbon-tag">FASE 01 // EL OBJETO</span>
+          <span class="ribbon-step">02 / 23</span>
+        </div>
+        <div class="card-content-split">
+          <div class="col-text">
+            <h2 class="title-large">¿QUÉ HAY EN <span class="highlight-pastel-yellow">ESTA BOLSA</span>?</h2>
+            <p class="phrase-lead">
+              A simple vista parece un kit escolar de 3 dólares.
+            </p>
+            <div class="interactive-reveal-card" id="revealBox1">
+              <button class="reveal-btn-simple">
+                <span>✦</span> Revelar Realidad
+              </button>
+              <div class="reveal-body">
+                <p class="reveal-result-text">
+                  Adentro hay <strong>2 Premios Nobel de física</strong>, nanotecnología y la solución al cambio climático.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-hero-media">
+            <div class="hero-image-frame">
+              <img src="assets/1 - bolsa autito.jpeg" alt="Bolsa con kit de auto solar cerrado">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 03: EL DESPIECE -->
+    <section class="slide" id="slide-3" data-index="2">
+      <div class="slide-card">
+        <div class="card-ribbon">
+          <span class="ribbon-tag">FASE 02 // EL DESPIECE</span>
+          <span class="ribbon-step">03 / 23</span>
+        </div>
+        <div class="card-content-split">
+          <div class="col-text">
+            <h2 class="title-large">CERO PILAS.<br><span class="highlight-pastel-blue">CERO BATERÍAS.</span></h2>
+            <p class="phrase-lead">
+              No hay enchufe a la pared. No hay químicos acumulados.
+            </p>
+            <div class="pill-concept" style="background:var(--pastel-peach-bg); color:var(--pastel-peach-text); border-color:var(--pastel-peach-border);">
+              ¿Cómo se va a mover entonces?
+            </div>
+          </div>
+          <div class="col-hero-media">
+            <div class="hero-image-frame">
+              <img src="assets/2 - bolsa piezas autito.jpeg" alt="Piezas despiezadas del auto solar">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 04: DOS COMPONENTES CLAVE -->
+    <section class="slide" id="slide-4" data-index="3">
+      <div class="slide-card">
+        <div class="card-ribbon">
+          <span class="ribbon-tag">ARQUITECTURA</span>
+          <span class="ribbon-step">04 / 23</span>
+        </div>
+        <div class="card-content-split" style="flex-direction: column; justify-content: center; text-align: center; gap: 2.2rem;">
+          <div>
+            <h2 class="title-large">DOS COMPONENTES CLAVE</h2>
+            <p class="phrase-lead" style="margin: 0.8rem auto 0; max-width: 650px;">
+              Toda la magia ocurre en la unión de dos piezas:
+            </p>
+          </div>
+          <div class="comparison-grid" style="max-width: 950px; margin: 0 auto;">
+            <div class="comparison-box" style="background:var(--pastel-blue-bg); border-color:var(--pastel-blue-border);">
+              <div class="comp-title" style="color:var(--pastel-blue-text); font-size:1.7rem;">1. PANEL SOLAR</div>
+              <div class="comp-sub" style="font-size:1.25rem;">Atrapa la luz solar y libera electrones en movimiento.</div>
+            </div>
+            <div class="comparison-box" style="background:var(--pastel-yellow-bg); border-color:var(--pastel-yellow-border);">
+              <div class="comp-title" style="color:var(--pastel-yellow-text); font-size:1.7rem;">2. MOTOR ELÉCTRICO</div>
+              <div class="comp-sub" style="font-size:1.25rem;">Recibe la corriente y la convierte en giro mecánico.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 05: LA FUENTE PRIMARIA / EL SOL -->
+    <section class="slide" id="slide-5" data-index="4">
+      <div class="slide-card">
+        <div class="card-ribbon">
+          <span class="ribbon-tag">ENERGÍA CÓSMICA</span>
+          <span class="ribbon-step">05 / 23</span>
+        </div>
+        <div class="card-content-split">
+          <div class="col-text">
+            <h2 class="title-large">UN REACTOR A <span class="highlight-pastel-yellow">150 MILLONES DE KM</span></h2>
+            <p class="phrase-lead">
+              El Sol transforma <strong>600 millones de toneladas</strong> de hidrógeno por segundo en radiación pura.
+            </p>
+            <div class="pill-concept">
+              Nuestra central nuclear espacial
+            </div>
+          </div>
+          <div class="col-hero-media">
+            <div class="hero-image-frame">
+              <img src="assets/sol_astro.png" alt="El Sol en el espacio visto desde satélite">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 06: PREGUNTA TIEMPO DE VIAJE -->
+    <section class="slide" id="slide-6" data-index="5">
+      <div class="slide-card">
+        <div class="card-ribbon">
+          <span class="ribbon-tag">PREGUNTA EN SALA</span>
+          <span class="ribbon-step">06 / 23</span>
+        </div>
+        <div class="card-content-split">
+          <div class="col-text">
+            <h2 class="title-large">¿CUÁNTO TARDA <span class="highlight-pastel-blue">LA LUZ</span> EN LLEGAR?</h2>
+            <p class="phrase-lead">
+              Desde el Sol hasta el patio de su liceo...
+            </p>
+            <div class="interactive-reveal-card" id="revealBox2">
+              <button class="reveal-btn-simple">
+                <span>⏱</span> Revelar Tiempo
+              </button>
+              <div class="reveal-body">
+                <p class="reveal-result-text">
+                  ¡Apenas <strong>8 minutos y 20 segundos</strong>!<br>
+                  Viajando a <strong>300.000 kilómetros por segundo</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-hero-media">
+            <div class="hero-image-frame">
+              <img src="assets/sol_atardecer.png" alt="Luz solar en la atmósfera terrestre">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 07: LOS FOTONES -->
+    <section class="slide" id="slide-7" data-index="6">
+      <div class="slide-card">
+        <div class="card-ribbon">
+          <span class="ribbon-tag">FÍSICA DE LA LUZ</span>
+          <span class="ribbon-step">07 / 23</span>
+        </div>
+        <div class="card-content-split">
+          <div class="col-text">
+            <h2 class="title-large">LA LUZ SON <span class="highlight-pastel-peach">PROYECTILES</span></h2>
+            <p class="phrase-lead">
+              La luz no es solo brillo. Viaja en paquetes individuales de energía llamados <strong>FOTONES</strong>.
+            </p>
+            <div class="pill-concept">
+              Pequeñas balas de energía pura
+            </div>
+          </div>
+          <div class="col-hero-media">
+            <div class="hero-image-frame">
+              <img src="assets/energia_solar_fotopanel.png" alt="Fotones chocando con el panel solar">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 08: EL PANEL SOLAR -->
+    <section class="slide" id="slide-8" data-index="7">
+      <div class="slide-card">
+        <div class="card-ribbon">
+          <span class="ribbon-tag">LA CELDA SOLAR</span>
+          <span class="ribbon-step">08 / 23</span>
+        </div>
+        <div class="card-content-split">
+          <div class="col-text">
+            <h2 class="title-large">LA TRAMPA <span class="highlight-pastel-blue">DE LUZ</span></h2>
+            <p class="phrase-lead">
+              El fotón choca con el silicio y <strong>arranca electrones</strong> de sus átomos.
+            </p>
+            <p class="phrase-lead" style="color:#0284c7; font-weight:700;">
+              Electrones en fila = Corriente Eléctrica.
+            </p>
+          </div>
+          <div class="col-hero-media">
+            <div class="hero-image-frame">
+              <img src="assets/panel solar.png" alt="Celda solar fotovoltaica en detalle">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 09: SILICIO TIPO N Y TIPO P -->
+    <section class="slide" id="slide-9" data-index="8">
+      <div class="slide-card">
+        <div class="card-ribbon">
+          <span class="ribbon-tag">NANOTECNOLOGÍA</span>
+          <span class="ribbon-step">09 / 23</span>
+        </div>
+        <div class="card-content-split">
+          <div class="col-text">
+            <h2 class="title-large">EL TOBOGÁN DE <span class="highlight-pastel-green">ELECTRONES</span></h2>
+            <p class="phrase-lead">
+              <strong>Capa N:</strong> Exceso de electrones.<br>
+              <strong>Capa P:</strong> Huecos esperando electrones.
+            </p>
+            <div class="pill-concept">
+              Solo pueden viajar en una dirección: ¡hacia el motor!
+            </div>
+          </div>
+          <div class="col-hero-media">
+            <div class="hero-image-frame">
+              <img src="assets/panel_solar_materialtipon_tipop.png" alt="Capas de silicio tipo N y tipo P">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 10: CHILE Y ATACAMA -->
+    <section class="slide" id="slide-10" data-index="9">
+      <div class="slide-card">
+        <div class="card-ribbon">
+          <span class="ribbon-tag">CHILE EN EL MUNDO</span>
+          <span class="ribbon-step">10 / 23</span>
+        </div>
+        <div class="card-content-split">
+          <div class="col-text">
+            <h2 class="title-large">CHILE: CAPITAL SOLAR <span class="highlight-pastel-yellow">DEL MUNDO</span></h2>
+            <p class="phrase-lead">
+              Atacama tiene la <strong>mayor radiación solar del planeta Tierra</strong>.
+            </p>
+            <p class="phrase-lead" style="font-size:1.35rem;">
+              La misma celda de silicio que tienen en su mesa hoy abastece a ciudades enteras.
+            </p>
+          </div>
+          <div class="col-hero-media">
+            <div class="hero-image-frame">
+              <img src="assets/paneles soalres atacama.png" alt="Parque solar en el Desierto de Atacama">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 11: EL MOTOR ELÉCTRICO -->
+    <section class="slide" id="slide-11" data-index="10">
+      <div class="slide-card">
+        <div class="card-ribbon">
+          <span class="ribbon-tag">ELECTROMECÁNICA</span>
+          <span class="ribbon-step">11 / 23</span>
+        </div>
+        <div class="card-content-split">
+          <div class="col-text">
+            <h2 class="title-large">DE VOLTIOS <span class="highlight-pastel-blue">A GIRO</span></h2>
+            <p class="phrase-lead">
+              El panel genera electricidad...
+            </p>
+            <p class="phrase-lead" style="color:#0369a1; font-weight:700;">
+              El motor la transforma en movimiento físico directo.
+            </p>
+          </div>
+          <div class="col-hero-media">
+            <div class="hero-image-frame">
+              <img src="assets/motor electrico.png" alt="Motor eléctrico de corriente continua">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 12: EFICIENCIA COMPARADA -->
+    <section class="slide" id="slide-12" data-index="11">
+      <div class="slide-card">
+        <div class="card-ribbon">
+          <span class="ribbon-tag">EFICIENCIA ENERGÉTICA</span>
+          <span class="ribbon-step">12 / 23</span>
+        </div>
+        <div class="card-content-split" style="flex-direction: column; justify-content: center; text-align: center; gap: 2rem;">
+          <h2 class="title-large">¿POR QUÉ EL MOTOR ELÉCTRICO GANA?</h2>
+          <div class="comparison-grid" style="max-width: 950px; margin: 0 auto;">
+            <div class="comparison-box">
+              <div class="comp-number loss">~30%</div>
+              <div class="comp-title">MOTOR A GASOLINA</div>
+              <div class="comp-sub">Pierde el 70% en calor inútil y gases contaminantes.</div>
+            </div>
+            <div class="comparison-box highlight-win">
+              <div class="comp-number">&gt;90%</div>
+              <div class="comp-title">MOTOR ELÉCTRICO</div>
+              <div class="comp-sub">Aprovecha casi toda la energía directamente en giro.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 13: RAYOS X AL MOTOR -->
+    <section class="slide" id="slide-13" data-index="12">
+      <div class="slide-card">
+        <div class="card-ribbon">
+          <span class="ribbon-tag">ELECTROMAGNETISMO</span>
+          <span class="ribbon-step">13 / 23</span>
+        </div>
+        <div class="card-content-split">
+          <div class="col-text">
+            <h2 class="title-large">¿CÓMO GIRA <span class="highlight-pastel-yellow">SIN TOCARLO</span>?</h2>
+            <p class="phrase-lead">
+              <strong>1. Imanes fijos</strong> en los costados.<br>
+              <strong>2. Bobina de cobre</strong> con corriente solar.
+            </p>
+            <div class="pill-concept" style="background:var(--pastel-yellow-bg); color:var(--pastel-yellow-text); border-color:var(--pastel-yellow-border);">
+              Los polos iguales se repelen y empujan el eje.
+            </div>
+          </div>
+          <div class="col-hero-media">
+            <div class="hero-image-frame">
+              <img src="assets/partes_motor_electrico.png" alt="Partes internas del motor eléctrico">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 14: VIDEO EN ACCIÓN -->
+    <section class="slide" id="slide-14" data-index="13">
+      <div class="slide-card">
+        <div class="card-ribbon">
+          <span class="ribbon-tag">SIMULACIÓN EN VIDEO</span>
+          <span class="ribbon-step">14 / 23</span>
+        </div>
+        <div class="card-content-split">
+          <div class="col-text">
+            <h2 class="title-large">EL MOTOR <span class="highlight-pastel-blue">EN 20 SEGUNDOS</span></h2>
+            <p class="phrase-lead">
+              Observa cómo las fuerzas magnéticas hacen girar el eje sin ninguna fricción de contacto.
+            </p>
+            <div class="pill-concept">
+              Giro continuo gracias al electromagnetismo
+            </div>
+          </div>
+          <div class="col-hero-media">
+            <div class="clean-video-frame">
+              <video id="motorVideo" preload="metadata" playsinline loop>
+                <source src="assets/video_motor_electrico.mp4" type="video/mp4">
+                <source src="assets/cómo-funciona-un-motor-eléctrico--explicación-rápida-y-simple-shorts.mp4" type="video/mp4">
+              </video>
+              <button class="video-play-overlay-btn" id="videoOverlayBtn">
+                ▶ Reproducir Video
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 15: PREGUNTA AL COLEGIO -->
+    <section class="slide" id="slide-15" data-index="14">
+      <div class="slide-card">
+        <div class="card-ribbon">
+          <span class="ribbon-tag">DESAFÍO EN VIVO</span>
+          <span class="ribbon-step">15 / 23</span>
+        </div>
+        <div class="card-content-split" style="flex-direction: column; justify-content: center; text-align: center; gap: 2rem;">
+          <h2 class="title-large" style="font-size: clamp(2.8rem, 5vw, 4.4rem);">
+            ¿DÓNDE MÁS HAY UN <br><span class="highlight-pastel-yellow">MOTOR ELÉCTRICO</span>?
+          </h2>
+          <p class="phrase-lead" style="max-width: 750px; margin: 0 auto;">
+            Miren a su alrededor o piensen en su casa... ¿Cuántos motores eléctricos existen en su día a día?
+          </p>
+          <div class="interactive-reveal-card" id="revealBox3" style="max-width: 800px; margin: 0 auto;">
+            <button class="reveal-btn-simple">
+              <span>🔍</span> Revelar Motores Ocultos
+            </button>
+            <div class="reveal-body">
+              <p class="reveal-result-text">
+                En una casa promedio hay <strong>más de 30 motores invisibles</strong>: celular, secador, lavadora, metro y ascensores.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 16: EXTRAPOLACIÓN: ELECTROMOVILIDAD -->
+    <section class="slide" id="slide-16" data-index="15">
+      <div class="slide-card">
+        <div class="card-ribbon">
+          <span class="ribbon-tag">EXTRAPOLACIÓN // MOVILIDAD</span>
+          <span class="ribbon-step">16 / 23</span>
+        </div>
+        <div class="card-content-split">
+          <div class="col-text">
+            <h2 class="title-large">SCOOTERS Y <span class="highlight-pastel-blue">AUTOS ELÉCTRICOS</span></h2>
+            <p class="phrase-lead">
+              El motor está montado <strong>adentro de la misma rueda</strong>.
+            </p>
+            <div class="pill-concept">
+              Aceleración directa sin caja de cambios
+            </div>
+          </div>
+          <div class="col-hero-media">
+            <div class="hero-image-frame">
+              <img src="assets/ejemplo_rueda_scooter.png" alt="Motor eléctrico integrado en rueda de scooter">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 17: EXTRAPOLACIÓN: INDUSTRIA Y FUERZA -->
+    <section class="slide" id="slide-17" data-index="16">
+      <div class="slide-card">
+        <div class="card-ribbon">
+          <span class="ribbon-tag">EXTRAPOLACIÓN // POTENCIA</span>
+          <span class="ribbon-step">17 / 23</span>
+        </div>
+        <div class="card-content-split">
+          <div class="col-text">
+            <h2 class="title-large">FUERZA <span class="highlight-pastel-peach">EXTREMA</span></h2>
+            <p class="phrase-lead">
+              Multiplicando la fuerza humana por mil para perforar acero y roca minera.
+            </p>
+            <div class="pill-concept">
+              Torque masivo en tamaño compacto
+            </div>
+          </div>
+          <div class="col-hero-media">
+            <div class="hero-image-frame">
+              <img src="assets/ejemplo_taladro.png" alt="Motor eléctrico de alto torque en taladro">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 18: EXTRAPOLACIÓN: EN EL AIRE -->
+    <section class="slide" id="slide-18" data-index="17">
+      <div class="slide-card">
+        <div class="card-ribbon">
+          <span class="ribbon-tag">EXTRAPOLACIÓN // AERO</span>
+          <span class="ribbon-step">18 / 23</span>
+        </div>
+        <div class="card-content-split">
+          <div class="col-text">
+            <h2 class="title-large">DRONES Y <span class="highlight-pastel-purple">AEROESPACIAL</span></h2>
+            <p class="phrase-lead">
+              4 motores girando a más de <strong>20.000 RPM</strong> para desafiar la gravedad.
+            </p>
+            <div class="pill-concept">
+              Respuesta milimétrica en el aire
+            </div>
+          </div>
+          <div class="col-hero-media">
+            <div class="hero-image-frame">
+              <img src="assets/ejemplo_dron.png" alt="Dron con motores eléctricos de alta velocidad">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 19: EXTRAPOLACIÓN: AGUA PARA CHILE -->
+    <section class="slide" id="slide-19" data-index="18">
+      <div class="slide-card">
+        <div class="card-ribbon">
+          <span class="ribbon-tag">EXTRAPOLACIÓN // IMPACTO SOCIAL</span>
+          <span class="ribbon-step">19 / 23</span>
+        </div>
+        <div class="card-content-split">
+          <div class="col-text">
+            <h2 class="title-large">BOMBEO SOLAR <span class="highlight-pastel-blue">DE AGUA</span></h2>
+            <p class="phrase-lead">
+              Extrayendo agua para campos y comunidades rurales sin gastar un peso en combustible.
+            </p>
+            <div class="pill-concept">
+              Seguridad hídrica sustentable
+            </div>
+          </div>
+          <div class="col-hero-media">
+            <div class="hero-image-frame">
+              <img src="assets/ejemplo_bomba_agua.png" alt="Bomba solar de agua para zonas rurales">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 20: EXTRAPOLACIÓN: EN CASA -->
+    <section class="slide" id="slide-20" data-index="19">
+      <div class="slide-card">
+        <div class="card-ribbon">
+          <span class="ribbon-tag">EXTRAPOLACIÓN // EN TU CASA</span>
+          <span class="ribbon-step">20 / 23</span>
+        </div>
+        <div class="card-content-split">
+          <div class="col-text">
+            <h2 class="title-large">TECNOLOGÍA <span class="highlight-pastel-green">INVERTER</span></h2>
+            <p class="phrase-lead">
+              Motores inteligentes que regulan su velocidad y <strong>ahorran hasta 70% de luz</strong> en lavadoras y refrigeradores.
+            </p>
+            <div class="pill-concept">
+              Eficiencia en el hogar
+            </div>
+          </div>
+          <div class="col-hero-media">
+            <div class="hero-image-frame">
+              <img src="assets/ejemplo_lavadora.png" alt="Motor eléctrico Inverter de lavadora">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 21: EXTRAPOLACIÓN: ROBÓTICA -->
+    <section class="slide" id="slide-21" data-index="20">
+      <div class="slide-card">
+        <div class="card-ribbon">
+          <span class="ribbon-tag">EXTRAPOLACIÓN // EL FUTURO</span>
+          <span class="ribbon-step">21 / 23</span>
+        </div>
+        <div class="card-content-split">
+          <div class="col-text">
+            <h2 class="title-large">BRAZOS <span class="highlight-pastel-purple">ROBÓTICOS</span></h2>
+            <p class="phrase-lead">
+              6 o 7 servomotores coordinados para fabricar autos, ensamblar microchips o realizar cirugías en hospitales.
+            </p>
+            <div class="pill-concept">
+              La base de la robótica moderna
+            </div>
+          </div>
+          <div class="col-hero-media">
+            <div class="hero-image-frame">
+              <img src="assets/ejemplo_brazo_robotico.png" alt="Brazo robótico articulado industrial">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 22: LA META DE HOY -->
+    <section class="slide" id="slide-22" data-index="21">
+      <div class="slide-card">
+        <div class="card-ribbon">
+          <span class="ribbon-tag">MISIÓN TALLER</span>
+          <span class="ribbon-step">22 / 23</span>
+        </div>
+        <div class="card-content-split">
+          <div class="col-text">
+            <h2 class="title-large">EL OBJETIVO <span class="highlight-pastel-yellow">DE HOY</span></h2>
+            <p class="phrase-lead">
+              <strong>1. Engranajes suaves:</strong> sin apretar de más.<br>
+              <strong>2. Polaridad:</strong> si va hacia atrás, inviertan cables.<br>
+              <strong>3. El Sol manda:</strong> luz directa al panel.
+            </p>
+            <div class="pill-concept">
+              ¡A construir su propio vehículo solar!
+            </div>
+          </div>
+          <div class="col-hero-media">
+            <div class="hero-image-frame">
+              <img src="assets/3 - autito armado.jpeg" alt="Auto solar fotovoltaico completamente armado">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 23: CIERRE INSPIRACIONAL -->
+    <section class="slide" id="slide-23" data-index="22">
+      <div class="slide-card">
+        <div class="card-ribbon">
+          <span class="ribbon-tag">SEMANA INGENIOSAS 2026</span>
+          <span class="ribbon-step">23 / 23</span>
+        </div>
+        <div class="card-content-split" style="text-align: center; flex-direction: column; justify-content: center; gap: 2rem;">
+          <h2 class="title-large" style="font-size: clamp(3rem, 5.8vw, 4.6rem);">
+            NO ARMAN UN JUGUETE.<br>
+            <span class="highlight-pastel-yellow">MUEVEN AL MUNDO.</span>
+          </h2>
+          <p class="phrase-lead" style="max-width: 780px; margin: 0 auto;">
+            ¡Abran sus bolsas y comiencen a experimentar!
+          </p>
+          <div class="pill-concept" style="margin: 0 auto; font-size: 1.25rem; padding: 0.8rem 1.8rem; background:var(--pastel-blue-bg); color:var(--pastel-blue-text); border-color:var(--pastel-blue-border);">
+            Ingeniosas × Duoc UC
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       BOTTOM NAVIGATION BAR & HOTKEYS
+       ======================================================================== -->
+  <footer class="hud-footer" id="hudFooter">
+    <div class="nav-buttons-group">
+      <button class="nav-btn" id="btnPrev" title="Anterior (Flecha Izquierda)" disabled>
+        <span>←</span> Anterior
+      </button>
+      <button class="nav-btn" id="btnNext" title="Siguiente (Flecha Derecha o Espacio)">
+        Siguiente <span>→</span>
+      </button>
+    </div>
+
+    <div class="hotkeys-helper">
+      <span><span class="kbd-chip">← / →</span> Navegar</span>
+      <span><span class="kbd-chip">ESPACIO</span> Avanzar / Revelar</span>
+      <span><span class="kbd-chip">F</span> Pantalla Completa</span>
+      <span><span class="kbd-chip">G</span> Índice</span>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       SLIDE OVERVIEW GRID MODAL
+       ======================================================================== -->
+  <div class="overview-modal" id="slideOverviewModal" aria-hidden="true">
+    <div class="overview-top">
+      <div class="overview-heading">Índice de Diapositivas</div>
+      <button class="overview-close" id="overviewCloseBtn">Cerrar (Esc)</button>
+    </div>
+    <div class="overview-cards-container" id="overviewGrid">
+      <!-- Generated dynamically by presentation.js -->
+    </div>
+  </div>
+
+  <!-- Toast notice -->
+  <div class="toast-notice" id="toastFeedback" role="status"></div>
+
+  <script src="js/presentation.js"></script>
+</body>
+</html>

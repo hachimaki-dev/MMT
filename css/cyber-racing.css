@@ -1,0 +1,818 @@
+/* ==========================================================================
+   SEMANA INGENIOSAS 2026 - LIGHT EDITORIAL & PASTEL PRESENTATION
+   Clean white background, deep black typography, soft pastel accents,
+   large high-impact images, minimal text, silent transitions.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap');
+
+:root {
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-surface-subtle: #f1f5f9;
+  
+  --text-title: #090d16;
+  --text-body: #1e293b;
+  --text-lead: #334155;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  
+  /* Pastel Accent System */
+  --pastel-blue-bg: #e0f2fe;
+  --pastel-blue-text: #0369a1;
+  --pastel-blue-border: #bae6fd;
+  
+  --pastel-yellow-bg: #fef9c3;
+  --pastel-yellow-text: #854d0e;
+  --pastel-yellow-border: #fef08a;
+
+  --pastel-peach-bg: #ffedd5;
+  --pastel-peach-text: #9a3412;
+  --pastel-peach-border: #fed7aa;
+  
+  --pastel-green-bg: #dcfce7;
+  --pastel-green-text: #166534;
+  --pastel-green-border: #bbf7d0;
+  
+  --pastel-purple-bg: #f3e8ff;
+  --pastel-purple-text: #6b21a8;
+  --pastel-purple-border: #e9d5ff;
+
+  --pastel-pink-bg: #ffe4e6;
+  --pastel-pink-text: #9f1239;
+  --pastel-pink-border: #fecdd3;
+
+  --border-light: #e2e8f0;
+  --border-card: #cbd5e1;
+  
+  --font-heading: 'Outfit', -apple-system, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --hud-height: 64px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--bg-main);
+  color: var(--text-body);
+  font-family: var(--font-body);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* ==========================================================================
+   TOP MINIMAL HEADER (White & Clean)
+   ========================================================================== */
+
+.hud-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--hud-height);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid var(--border-light);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.brand-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--text-title);
+  text-transform: uppercase;
+}
+
+.brand-tag {
+  background: var(--pastel-purple-bg);
+  color: var(--pastel-purple-text);
+  border: 1px solid var(--pastel-purple-border);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  letter-spacing: 0.05em;
+}
+
+.hud-progress-group {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.slide-number-display {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-title);
+  letter-spacing: 0.02em;
+}
+
+.slide-number-display span {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.progress-track {
+  width: 160px;
+  height: 6px;
+  background: var(--border-light);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 4%;
+  background: #0284c7;
+  border-radius: 9999px;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hud-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.hud-btn {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  color: var(--text-lead);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.hud-btn:hover {
+  background: var(--bg-surface-subtle);
+  border-color: var(--border-card);
+  color: var(--text-title);
+}
+
+/* ==========================================================================
+   SLIDES DECK CONTAINER
+   ========================================================================== */
+
+.deck-container {
+  position: absolute;
+  top: var(--hud-height);
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 3.5rem;
+}
+
+.slide {
+  position: absolute;
+  inset: 1.5rem 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(16px);
+  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
+}
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.slide.previous {
+  transform: translateY(-16px);
+}
+
+/* ==========================================================================
+   SLIDE CARD (Crisp white canvas, high contrast)
+   ========================================================================== */
+
+.slide-card {
+  width: 100%;
+  max-width: 1360px;
+  height: 100%;
+  max-height: 700px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  box-shadow: 
+    0 10px 30px -5px rgba(0, 0, 0, 0.05),
+    0 4px 10px -2px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Minimal category ribbon */
+.card-ribbon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 2.8rem 0.6rem;
+}
+
+.ribbon-tag {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--pastel-blue-bg);
+  color: var(--pastel-blue-text);
+  border: 1px solid var(--pastel-blue-border);
+  padding: 0.3rem 0.8rem;
+  border-radius: 9999px;
+}
+
+.ribbon-step {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+/* Split content area */
+.card-content-split {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 1rem 3rem 2.2rem;
+  gap: 4rem;
+  overflow: hidden;
+}
+
+/* Text Column */
+.col-text {
+  flex: 1.05;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* Hero Media Column */
+.col-hero-media {
+  flex: 1.25;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY - LARGE, BOLD, BLACK, READABLE FROM A DISTANCE
+   ========================================================================== */
+
+.title-large {
+  font-family: var(--font-heading);
+  font-size: clamp(2.6rem, 4.2vw, 3.8rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--text-title);
+}
+
+/* Pastel highlights for text */
+.highlight-pastel-blue {
+  background: var(--pastel-blue-bg);
+  color: var(--pastel-blue-text);
+  padding: 0.1rem 0.5rem;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.highlight-pastel-yellow {
+  background: var(--pastel-yellow-bg);
+  color: var(--pastel-yellow-text);
+  padding: 0.1rem 0.5rem;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.highlight-pastel-green {
+  background: var(--pastel-green-bg);
+  color: var(--pastel-green-text);
+  padding: 0.1rem 0.5rem;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.phrase-lead {
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  line-height: 1.45;
+  color: var(--text-lead);
+  font-weight: 500;
+}
+
+.phrase-lead strong {
+  color: var(--text-title);
+  font-weight: 700;
+}
+
+.pill-concept {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-light);
+  color: var(--text-lead);
+  font-size: clamp(1.05rem, 1.35vw, 1.25rem);
+  font-weight: 600;
+  padding: 0.65rem 1.3rem;
+  border-radius: 12px;
+  width: fit-content;
+}
+
+/* ==========================================================================
+   HERO IMAGERY (Clean, spacious, prominent)
+   ========================================================================== */
+
+.hero-image-frame {
+  width: 100%;
+  height: 100%;
+  max-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: var(--bg-surface-subtle);
+  border-radius: 16px;
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+}
+
+.hero-image-frame img {
+  max-width: 96%;
+  max-height: 96%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  transition: transform 0.35s ease;
+}
+
+.hero-image-frame:hover img {
+  transform: scale(1.02);
+}
+
+/* Comparison cards (Gasolina vs Eléctrico) */
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.comparison-box {
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 2.2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  text-align: center;
+}
+
+.comparison-box.highlight-win {
+  background: var(--pastel-green-bg);
+  border: 1px solid var(--pastel-green-border);
+}
+
+.comp-number {
+  font-family: var(--font-heading);
+  font-size: 3.8rem;
+  font-weight: 900;
+  color: var(--pastel-green-text);
+  line-height: 1;
+}
+
+.comp-number.loss {
+  color: var(--text-muted);
+}
+
+.comp-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-title);
+}
+
+.comp-sub {
+  font-size: 1.05rem;
+  color: var(--text-lead);
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   MINIMALIST INTERACTIVE REVEAL (Pastel Accent Button)
+   ========================================================================== */
+
+.interactive-reveal-card {
+  margin-top: 0.8rem;
+  background: var(--bg-surface-subtle);
+  border: 1px dashed var(--border-card);
+  border-radius: 14px;
+  padding: 1.3rem 1.8rem;
+  transition: all 0.3s ease;
+}
+
+.interactive-reveal-card.revealed {
+  background: var(--pastel-yellow-bg);
+  border: 1px solid var(--pastel-yellow-border);
+}
+
+.reveal-btn-simple {
+  background: #090d16;
+  border: none;
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 0.8rem 1.6rem;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.reveal-btn-simple:hover {
+  background: #1e293b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.reveal-body {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.35s ease, margin-top 0.35s ease;
+}
+
+.interactive-reveal-card.revealed .reveal-body {
+  max-height: 220px;
+  opacity: 1;
+  margin-top: 0.4rem;
+}
+
+.reveal-result-text {
+  font-size: clamp(1.25rem, 1.8vw, 1.55rem);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--pastel-yellow-text);
+}
+
+.reveal-result-text strong {
+  color: #000000;
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   VIDEO PLAYER CHASSIS
+   ========================================================================== */
+
+.clean-video-frame {
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #0f172a;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.clean-video-frame video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.video-play-overlay-btn {
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  color: var(--text-title);
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+  padding: 0.9rem 1.8rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  z-index: 5;
+}
+
+.video-play-overlay-btn:hover {
+  background: var(--pastel-blue-bg);
+  color: var(--pastel-blue-text);
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   BOTTOM NAVIGATION BAR (White, high-contrast)
+   ========================================================================== */
+
+.hud-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-top: 1px solid var(--border-light);
+}
+
+.nav-buttons-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-btn {
+  background: #ffffff;
+  border: 1px solid var(--border-card);
+  color: var(--text-title);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.5rem 1.3rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.nav-btn:hover:not(:disabled) {
+  background: #090d16;
+  color: #ffffff;
+  border-color: #090d16;
+}
+
+.nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  background: var(--bg-surface-subtle);
+}
+
+.hotkeys-helper {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.kbd-chip {
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-light);
+  color: var(--text-title);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   SLIDE OVERVIEW GRID MODAL
+   ========================================================================== */
+
+.overview-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 3.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+.overview-modal.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.overview-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 1rem;
+}
+
+.overview-heading {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-title);
+}
+
+.overview-close {
+  background: #ffffff;
+  border: 1px solid var(--border-card);
+  color: var(--text-title);
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+
+.overview-close:hover {
+  background: #090d16;
+  color: #fff;
+}
+
+.overview-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.2rem;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.overview-item {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 1.3rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.overview-item:hover, .overview-item.current {
+  border-color: #0284c7;
+  background: var(--pastel-blue-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.12);
+}
+
+.overview-num {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--pastel-blue-text);
+  font-weight: 700;
+}
+
+.overview-label {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-title);
+  margin-top: 0.4rem;
+  line-height: 1.25;
+}
+
+/* Toast */
+.toast-notice {
+  position: fixed;
+  top: 75px;
+  right: 30px;
+  background: #090d16;
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  z-index: 300;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: all 0.25s ease;
+  pointer-events: none;
+}
+
+.toast-notice.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .card-content-split {
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+  .col-hero-media {
+    max-height: 320px;
+  }
+}
+
+/* ==========================================================================
+   FULLSCREEN PRESENTATION MODE
+   Hide controls and HUD bars for a 100% immersive presentation deck
+   ========================================================================== */
+
+:fullscreen .hud-header,
+:fullscreen .hud-footer,
+:-webkit-full-screen .hud-header,
+:-webkit-full-screen .hud-footer,
+body.is-fullscreen .hud-header,
+body.is-fullscreen .hud-footer {
+  display: none !important;
+}
+
+:fullscreen .deck-container,
+:-webkit-full-screen .deck-container,
+body.is-fullscreen .deck-container {
+  top: 0 !important;
+  bottom: 0 !important;
+  height: 100vh !important;
+  padding: 2.2vh 3vw !important;
+}
+
+:fullscreen .slide,
+:-webkit-full-screen .slide,
+body.is-fullscreen .slide {
+  inset: 2.2vh 3vw !important;
+}
+
+:fullscreen .slide-card,
+:-webkit-full-screen .slide-card,
+body.is-fullscreen .slide-card {
+  max-height: 94vh !important;
+  height: 100% !important;
+  box-shadow: 0 12px 40px -8px rgba(0, 0, 0, 0.08);
+}
+
+:fullscreen .toast-notice,
+:-webkit-full-screen .toast-notice,
+body.is-fullscreen .toast-notice {
+  top: 24px;
+}
+
+/* Auto-hide cursor when inactive in fullscreen */
+body.is-fullscreen.hide-cursor,
+:fullscreen.hide-cursor,
+:-webkit-full-screen.hide-cursor {
+  cursor: none !important;
+}
+
